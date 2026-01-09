@@ -8,7 +8,7 @@ app:
 
 image:
   repository: ghcr.io/faraujosilva/media-service
-  tag: "v1.2.0"
+  tag: "4413aa1d3e4148e48e88fcb81ff446eeafdab223"
 
 imagePullSecrets:
   - name: ghcr-secret
