@@ -61,8 +61,12 @@ ingress:
   className: alb
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/subnets: subnet-0eb8fc8a721fe0dae,subnet-03d46707cc173749b,subnet-0e8cdbbab8e56276a
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/healthcheck-path: /health
   hosts:
-    - host: media-service.example.com
+    - host: ""
       paths:
         - path: /
           pathType: Prefix
