@@ -69,6 +69,11 @@ ingress:
 
 # Infrastructure - Dev escolhe apenas flavor!
 infrastructure:
+  enabled: true
+  cloudProvider: aws
+  organization: plathub
+  namespace: terraform-system
+  tokenSecret: hcp-terraform-token
   storage:
     enabled: true
     flavor: standard
