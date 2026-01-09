@@ -10,6 +10,9 @@ image:
   repository: ghcr.io/faraujosilva/media-service
   tag: "v1.2.0"
 
+imagePullSecrets:
+  - name: ghcr-secret
+
 replicaCount: 3
 
 autoscaling:
