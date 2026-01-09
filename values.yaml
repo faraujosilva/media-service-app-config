@@ -71,7 +71,6 @@ ingress:
 infrastructure:
   enabled: true
   cloudProvider: aws
-  organization: plathub
   namespace: terraform-system
   tokenSecret: hcp-terraform-token
   
