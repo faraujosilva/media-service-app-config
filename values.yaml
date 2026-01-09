@@ -1,0 +1,56 @@
+# Media Service - Values
+# Gerenciado pelo Dev Team
+
+app:
+  name: media-service
+  team: media-team
+  costCenter: CC-12345
+
+image:
+  repository: ghcr.io/faraujosilva/media-service
+  tag: "v1.2.0"
+
+replicaCount: 3
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 75
+
+container:
+  port: 8080
+  env:
+    - name: APP_ENV
+      value: "production"
+    - name: LOG_LEVEL
+      value: "info"
+  
+  resources:
+    requests:
+      cpu: 200m
+      memory: 256Mi
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  hosts:
+    - host: media-service.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+
+# Infrastructure - Dev escolhe apenas flavor!
+infrastructure:
+  storage:
+    enabled: true
+    flavor: standard
