@@ -72,7 +72,6 @@ infrastructure:
   enabled: true
   cloudProvider: aws
   namespace: terraform-system
-  tokenSecret: hcp-terraform-token
   
   # Cost Matrix (Platform Team defaults)
   costMatrix:
