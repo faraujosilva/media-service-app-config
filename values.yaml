@@ -29,6 +29,21 @@ container:
     - name: LOG_LEVEL
       value: "info"
   
+  # Health checks - usando /health para funcionar sem storage
+  livenessProbe:
+    httpGet:
+      path: /health
+      port: http
+    initialDelaySeconds: 30
+    periodSeconds: 10
+
+  readinessProbe:
+    httpGet:
+      path: /health  # Usando /health ao invés de /ready (não depende de storage)
+      port: http
+    initialDelaySeconds: 5
+    periodSeconds: 5
+
   resources:
     requests:
       cpu: 200m
