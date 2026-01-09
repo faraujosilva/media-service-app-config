@@ -74,6 +74,22 @@ infrastructure:
   organization: plathub
   namespace: terraform-system
   tokenSecret: hcp-terraform-token
+  
+  # Cost Matrix (Platform Team defaults)
+  costMatrix:
+    aws:
+      standard: 0.023
+      premium: 0.125
+      economy: 0.0125
+      archive: 0.004
+    azure:
+      standard: 0.0184
+      premium: 0.15
+      economy: 0.01
+      archive: 0.00099
+
   storage:
     enabled: true
     flavor: standard
+    versioning: false
+    encryption: true
