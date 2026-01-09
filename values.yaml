@@ -7,7 +7,7 @@ app:
   costCenter: CC-12345
 
 image:
-  repository: ghcr.io/faraujosilva/media-service
+  repository: ghcr.io/faraujosilva/media-service/app
   tag: "4413aa1d3e4148e48e88fcb81ff446eeafdab223"
 
 imagePullSecrets:
