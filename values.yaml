@@ -92,6 +92,6 @@ infrastructure:
 
   storage:
     enabled: true
-    flavor: standard
+    flavor: archive
     versioning: false
     encryption: true
